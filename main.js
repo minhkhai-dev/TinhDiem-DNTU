@@ -5,7 +5,7 @@ let DiemTB = document.getElementById('tbmon')
 let XepLoai = document.getElementById('xeploai')
 let DiemA = document.getElementById('diemA')
 let DiemB = document.getElementById('diemB')
-let DiemQuamon = document.getElementById('diemqua')
+let DiemB2 = document.getElementById('diemb2')
 let btnRun = document.querySelector('#btnRun');
 
 function KTraDiem(diem) {
@@ -42,8 +42,7 @@ function TBMon() {
         // Diem can dat de A, B+ va qua mon
         DiemA.innerHTML = ((8.5 - tx * 0.3 - gk * 0.2) / 0.5).toFixed(1);
         DiemB.innerHTML = ((8 - tx * 0.3 - gk * 0.2) / 0.5).toFixed(1);
-        let quamon = ((4 - tx * 0.3 - gk * 0.2) / 0.5).toFixed(1)
-        DiemQuamon.innerHTML = (quamon > 0) ? quamon : 4
+        DiemB2.innerHTML = ((7 - tx * 0.3 - gk * 0.2) / 0.5).toFixed(1);
     }
 
 
