@@ -20,12 +20,16 @@ function KTraDiem(diem) {
 }
 
 function TBMon() {
-    let tx = parseFloat(DiemTX.value.trim());
+    let txs = DiemTX.value.trim().split(/\s+/).map(Number).filter(x => !isNaN(x));
+    let tx = txs.reduce((a, b) => a + b, 0) / txs.length;
     let gk = parseFloat(DiemGK.value.trim());
     let ck = parseFloat(DiemCK.value.trim());
 
-    if (tx > 10 || gk > 10 || ck > 10) window.alert('Điểm ko được nhập lớn hơn 10')
-    if (KTraDiem(tx) && KTraDiem(gk) && KTraDiem(ck)) {
+    if (tx > 10 || gk > 10 || ck > 10) {
+        window.alert('Điểm ko được nhập lớn hơn 10')
+        return;
+    }
+    else if (KTraDiem(tx) && KTraDiem(gk) && KTraDiem(ck)) {
         let tbm = ((tx * 0.3) + (gk * 0.2) + (ck * 0.5)).toFixed(1);
         DiemTB.innerHTML = tbm;
         //=== Xep loai ===
@@ -44,8 +48,6 @@ function TBMon() {
         DiemB.innerHTML = ((8 - tx * 0.3 - gk * 0.2) / 0.5).toFixed(1);
         DiemB2.innerHTML = ((7 - tx * 0.3 - gk * 0.2) / 0.5).toFixed(1);
     }
-
-
 }
 
 btnRun.addEventListener('click', () => TBMon())
