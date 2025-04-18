@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <section class="w-full min-h-screen bg-gradient-to-r from-purple-500 to-pink-500">
-        <h1 class="text-center pt-[30px] mb-9 text-[32px] font-bold text-slate-800">Tính điểm</h1>
+<body class="w-full min-h-screen bg-gradient-to-tr from-purple-500 to-pink-500 flex justify-center">
+    <section class="w-full md:max-w-[500px]">
+        <h1 class="text-center my-[30px] text-[32px] font-bold text-white">Tính điểm</h1>
         <div class="w-full h-12 px-3 my-4">
             <input type="text" placeholder="Nhập điểm TBTX" id="diemtx"
             class="w-full h-full border-none outline-none p-3 rounded-md"/>
@@ -22,8 +22,9 @@
             <input type="text" placeholder="Nhập điểm Cuối kì (nếu có)" id="diemcki"
             class="w-full h-full border-none outline-none p-3 rounded-md"/>
         </div>
-        <button class="mx-3 my-2 w-28 h-11 rounded-md text-white text-[16px] bg-red-600 active:bg-red-500" id="btnRun">Run</button>
+        <button class="mx-3 my-2 w-28 h-11 rounded-md text-white text-[16px] bg-red-600 active:bg-red-500" id="btnRun">Kết quả</button>
 
+        <h6 class="text-center my-4 text-[14px] font-medium text-gray-200">Điểm TB = (TBTX*0.3) + (GK*0.2) + (CK*0.5)</h6>
         <ul class="mx-3 mt-4 px-3 py-5 bg-white rounded-xl w-[100%-12px] min-h-[200px]">
             <li>Điểm TB môn: <span class="text-red-600 font-bold" id="tbmon">0</span> </li>
             <li>Xếp loại: <span class="text-red-600 font-medium" id="xeploai">Chưa xác định</span> </li>
